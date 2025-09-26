@@ -38,6 +38,7 @@ $(function () {
     createPlatform(1200,50,100,10);
     createPlatform(990,330,100,10);
     
+    
 
 
 
