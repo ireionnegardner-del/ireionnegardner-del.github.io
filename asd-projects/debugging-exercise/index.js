@@ -80,7 +80,7 @@ function decideSpeed() {
 
 // this generates an id for a ghost given the ghost's number
 function getId(number) {
-  return "ghost" + number; 
+  return "ghost" + number;
 }
 
 // this adds a ghost into the HTML
@@ -136,7 +136,7 @@ function moveGhost(ghost) {
 // this bounces ghosts if they hit a wall
 function bounceGhost(ghost) {
   // this bounces off the left wall
- if (ghost.x < 0) {
+  if (ghost.x < 0) {
     ghost.x -= ghost.speedX;
     ghost.speedX *= -1;
   }
