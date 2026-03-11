@@ -129,7 +129,7 @@ function update () {
 
 // this moves ghosts in memory but doesn't update them on the screen
 function moveGhost(ghost) {
-  ghost.x = ghost.speedX;
+  ghost.x += ghost.speedX;
   ghost.y += ghost.speedY;
 }
 
@@ -153,13 +153,13 @@ function bounceGhost(ghost) {
   // this bounces off the bottom wall
   else if (ghost.y > boardHeight) {
     ghost.y -= ghost.speedY;
-    ghost.speedX *= -1;
+    ghost.speedY *= -1;
   }
 }
 
 // this redraws the ghost's position on the screen
 function updateGhostOnScreen(ghost) {
-  maxGhosts = 1;
+  //maxGhosts = 1;
 
   // these lines redraw the ghost's position
   $(ghost.id).css("left", ghost.x);
@@ -193,10 +193,11 @@ function updateOrientation(ghost) {
 
   // Flip vertically if moving down
   if (ghost.speedY > 0) {
-    scaleY = -1;
+        scaleY = -1;
   } else if (ghost.speedY < 0) {
     scaleY = 1;
   }
+
 
   $(ghost.id).css("transform", `scaleX(${scaleX}) scaleY(${scaleY})`);
 }
